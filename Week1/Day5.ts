@@ -53,6 +53,8 @@ function main(input: string[]) {
                             lastIndex = j;
                         }
                     }     
+
+                    newWord = newWord.slice(0, newWord.length - 2)
                                    
                     output.push(newWord);
                 break;                
@@ -128,7 +130,12 @@ function main(input: string[]) {
                 break;
             }
         }
-    }
+    }    
     
+    for(let i in output) {
+        output[i] = output[i].replace('\r', '');
+        // output[i] = output[i].replace('\n', '');
+    }    
+
     output.map((x) => console.log(x));
 }
